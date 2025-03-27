@@ -10,7 +10,6 @@ declare module 'vue' {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     LoadingOverlay: typeof import('./components/common/LoadingOverlay.vue')['default']
-    Overlay: typeof import('./components/common/Overlay.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ToastComponente: typeof import('./components/common/ToastComponente.vue')['default']

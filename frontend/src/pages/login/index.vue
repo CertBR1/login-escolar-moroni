@@ -1,12 +1,19 @@
 <template>
-    <v-form v-model="formularioValido">
-        <v-text-field v-model="usuario" label="Usuario" type="usuario" variant="outlined" density="compact"
-            prepend-inner-icon="mdi-account" :rules="usuarioRules" />
-        <v-text-field v-model="senha" label="Senha" type="password" variant="outlined" density="compact"
-            prepend-inner-icon="mdi-lock" :rules="senhaRules" />
-        <v-btn :disabled="!formularioValido" block color="primary" class="mt-3" size="large"
-            @click="login">Entrar</v-btn>
-    </v-form>
+
+    <v-card-title>
+        <v-img src="frontend\src\assets\logo.png" max-height="100" contain></v-img>
+    </v-card-title>
+    <v-card-text>
+        <v-form v-model="formularioValido">
+            <v-text-field v-model="usuario" label="Usuario" type="usuario" variant="outlined" density="compact"
+                prepend-inner-icon="mdi-account" :rules="usuarioRules" />
+            <v-text-field v-model="senha" label="Senha" type="password" variant="outlined" density="compact"
+                prepend-inner-icon="mdi-lock" :rules="senhaRules" />
+            <v-btn :disabled="!formularioValido" block color="primary" class="mt-3" size="large"
+                @click="login">Entrar</v-btn>
+        </v-form>
+    </v-card-text>
+
 </template>
 
 <script>
@@ -34,7 +41,6 @@ export default {
                 await authStore.login(credencial);
             } catch (error) {
                 // useToast().mostrarToast("Usuário ou senha inválidos", "error");
-
             }
         }
     }
