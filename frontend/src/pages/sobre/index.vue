@@ -33,9 +33,6 @@
                             </v-list-item>
                         </v-list>
                     </v-card-text>
-                    <v-card-actions class="justify-center">
-                        <v-btn color="primary" class="mt-3" @click="goToHome">Voltar para Início</v-btn>
-                    </v-card-actions>
                 </v-card>
             </v-col>
         </v-row>

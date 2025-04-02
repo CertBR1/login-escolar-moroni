@@ -33,7 +33,7 @@ router.onError((err, to) => {
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
   if (!authStore.autenticado) {
-    if (to.path !== '/login') {
+    if (to.path !== '/login' && to.path !== '/sobre') {
       next('/login');
     } else {
       next();
