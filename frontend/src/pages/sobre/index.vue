@@ -3,35 +3,25 @@
         <v-row>
             <v-col cols="12" md="8" class="mx-auto">
                 <v-card class="pa-5" elevation="5" max-width="600px">
-                    <v-card-title class="text-h4 font-weight-bold text-center">Sobre o Sistema Escolar</v-card-title>
+                    <v-card-title class="text-h4 font-weight-bold text-center">
+                        EED - Escola Digital
+                    </v-card-title>
+                    <v-card-subtitle class="text-h5 font-weight-bold text-center">
+                        Nossa politica
+                    </v-card-subtitle>
                     <v-card-text class="text-body-1 mt-4">
-                        Nosso sistema escolar digital foi desenvolvido para modernizar o ensino,
-                        substituindo o uso da lousa tradicional por uma plataforma interativa e eficiente.
-                        Com ele, alunos e professores têm acesso a recursos inovadores que tornam o aprendizado
-                        mais dinâmico e acessível.
-                    </v-card-text>
-                    <v-divider class="my-4"></v-divider>
-                    <v-card-text>
-                        <v-list>
-                            <v-list-item>
-                                <v-list-item-icon>
-                                    <v-icon color="primary">mdi-laptop</v-icon>
-                                </v-list-item-icon>
-                                <v-list-item-content>Aulas interativas e acessíveis</v-list-item-content>
-                            </v-list-item>
-                            <v-list-item>
-                                <v-list-item-icon>
-                                    <v-icon color="primary">mdi-cloud-sync</v-icon>
-                                </v-list-item-icon>
-                                <v-list-item-content>Materiais sempre disponíveis online</v-list-item-content>
-                            </v-list-item>
-                            <v-list-item>
-                                <v-list-item-icon>
-                                    <v-icon color="primary">mdi-chart-bar</v-icon>
-                                </v-list-item-icon>
-                                <v-list-item-content>Acompanhamento do desempenho dos alunos</v-list-item-content>
-                            </v-list-item>
-                        </v-list>
+                        <v-expansion-panels multiple>
+                            <v-expansion-panel v-for="(item, index) in regras" :key="index">
+                                <v-expansion-panel-title class="font-weight-bold">{{ item.titulo
+                                    }}</v-expansion-panel-title>
+                                <v-expansion-panel-text>{{ item.descricao }}</v-expansion-panel-text>
+                            </v-expansion-panel>
+                            <v-divider class="my-4"></v-divider>
+                            <v-card-text class="text-body-2 font-italic">
+                                Estas políticas visam garantir um ambiente de aprendizado harmonioso e produtivo para
+                                todos.
+                            </v-card-text>
+                        </v-expansion-panels>
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -41,6 +31,46 @@
 
 <script>
 export default {
+    name: 'SobrePage',
+    data: () => ({
+        regras: [
+            {
+                titulo: "1. Respeito e Convivência",
+                descricao:
+                    "Todos os alunos, professores e funcionários devem manter um ambiente de respeito e cordialidade, promovendo um espaço seguro para aprendizado e desenvolvimento pessoal.",
+            },
+            {
+                titulo: "2. Uso de Tecnologia",
+                descricao:
+                    "O uso de dispositivos eletrônicos é permitido apenas para fins educacionais. O mau uso pode resultar em restrições ou penalidades conforme necessário.",
+            },
+            {
+                titulo: "3. Frequência e Pontualidade",
+                descricao:
+                    "A presença nas aulas é obrigatória, e atrasos recorrentes podem resultar em medidas disciplinares.",
+            },
+            {
+                titulo: "4. Avaliações e Desempenho",
+                descricao:
+                    "O desempenho acadêmico será avaliado com base em provas, projetos e participação ativa nas atividades escolares.",
+            },
+            {
+                titulo: "5. Conduta Online",
+                descricao:
+                    "Todos os alunos devem seguir as diretrizes de uso responsável da internet, evitando conteúdos impróprios e respeitando a privacidade de colegas e professores.",
+            },
+            {
+                titulo: "6. Código de Vestimenta",
+                descricao:
+                    "A escola pode estabelecer um código de vestimenta adequado ao ambiente educacional, garantindo respeito e profissionalismo.",
+            },
+            {
+                titulo: "7. Penalidades e Advertências",
+                descricao:
+                    "O descumprimento das políticas pode resultar em advertências, suspensão ou outras medidas cabíveis.",
+            },
+        ]
+    }),
     methods: {
         goToHome() {
             this.$router.push('/');
