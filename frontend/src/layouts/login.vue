@@ -6,9 +6,9 @@
                 <v-card-text>
                     <router-view></router-view>
                 </v-card-text>
-                <v-card-actions class="d-flex flex-column">
-                    <v-btn variant="text" color="primary" class="text-caption">Esqueceu a senha?</v-btn>
-                    <v-btn variant="text" color="secondary" class="text-caption">Criar conta</v-btn>
+                <v-card-actions class="d-flex justify-end align-end">
+                    <v-btn prepend-icon="mdi-information" color="primary" size="small" to="/sobre">Sobre</v-btn>
+                    <!-- <v-btn variant="text" color="secondary" class="text-caption">Criar conta</v-btn> -->
                 </v-card-actions>
             </v-card>
         </v-container>
